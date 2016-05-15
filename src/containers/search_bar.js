@@ -5,9 +5,14 @@ import {fetchWeather} from '../actions/index';
 
 class SearchBar extends Component {
 
+
+
     constructor(props) {
-        super(props);
-        this.state = {term: ''};
+        super(props)
+
+        this.default_city = 'London';
+
+        this.state = {term: this.default_city};
     }
 
     onInputChange(event) {
@@ -18,7 +23,7 @@ class SearchBar extends Component {
         event.preventDefault();
 
         this.props.fetchWeather(this.state.term);
-        this.setState({term:''});
+        this.setState({term:this.default_city});
     }
 
     render() {
