@@ -22,4 +22,18 @@ class WeatherList extends Component {
     }
 }
 
-export default WeatherList;
+//function mapStateToProps(state){
+//    return {weather: state.weather};
+//}
+
+//es6 synt sugar
+
+//function mapStateToProps({weather}) {
+//    return {weather: weather};
+//}
+
+function mapStateToProps({weather}) {
+    return {weather};
+}
+
+export default connect(null, mapStateToProps)(WeatherList);
